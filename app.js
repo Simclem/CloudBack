@@ -45,17 +45,13 @@ app.get("/movie", (req, res, next) => {
 });
 
 app.post("/addMovie", (req,res) =>{
-    console.log("in the post")
-    console.log(req.body);
     newFilmName = req.body['name'];
     newFilmYear = req.body['year'];
-    console.log(newFilmName+"   "+ newFilmYear )
     if((newFilmName !== undefined) && (newFilmYear !== undefined)) {
         newFilm ={
             "name":newFilmName,
             "year": newFilmYear
         }
         filmList.list.push(newFilm);
-        console.log(filmList);
     }
 });
