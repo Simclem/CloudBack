@@ -9,16 +9,29 @@ app.use(cors())
 var filmList = {
     "list" :[
         {
+            "id": 1,
             "name" : "Scarface",
-            "year" : "1983"
+            "description": "Short description",
+            "mark": 5,
+            "year": 1983,
+            "comment": "Cool",
+
         },
-        {
+        {   
+            "id": 2,
             "name" : "Starship Troopers",
-            "year" : "1998"
+            "description": "Short description",
+            "mark": 4,
+            "year": 1997,
+            "comment": "Nice",
         },
         {
+            "id": 3,
             "name" : "Gremlins",
-            "year" : "1984"
+            "description": "Short description",
+            "mark": 5,
+            "year": 1984,
+            "comment": "Cool with kids",
         }
     ]
 }
@@ -47,10 +60,17 @@ app.get("/movie", (req, res, next) => {
 app.post("/addMovie", (req,res) =>{
     newFilmName = req.body['name'];
     newFilmYear = req.body['year'];
+    newFilmDescription = req.body['description'];
+    newFilmMark = req.body['mark'];
+    newFilmComment = req.body['comment'];
     if((newFilmName !== undefined) && (newFilmYear !== undefined)) {
         newFilm ={
+            "id": this.filmList.size,
             "name":newFilmName,
-            "year": newFilmYear
+            "description": newFilmDescription,
+            "mark": newFilmMark,
+            "year": newFilmYear,
+            "comment": newFilmComment
         }
         filmList.list.push(newFilm);
     }
