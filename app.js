@@ -65,7 +65,7 @@ app.post("/addMovie", (req,res) =>{
     newFilmComment = req.body['comment'];
     if((newFilmName !== undefined) && (newFilmYear !== undefined)) {
         newFilm ={
-            "id": this.filmList.size,
+            "id": filmList.list.length+1,
             "name":newFilmName,
             "description": newFilmDescription,
             "mark": newFilmMark,
