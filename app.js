@@ -44,15 +44,15 @@ app.listen(8080, () => {
 
 app.get("/movie", (req, res, next) => {
    
-    var filmName = req.query["name"];
-    if (filmName ===undefined) {
+    var filmId = req.query["id"];
+    if (filmId ===undefined) {
         res.json(filmList);
     }else{
         
-        var found = filmList.list.find(function(element) {
+        /*var found = filmList.list.find(function(element) {
             return element.name === filmName;
-        });
-        res.json(found);
+        });*/
+        res.json(filmList.list[filmId-1]);
     }
 
 });
