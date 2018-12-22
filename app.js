@@ -48,10 +48,6 @@ app.get("/movie", (req, res, next) => {
     if (filmId ===undefined) {
         res.json(filmList);
     }else{
-        
-        /*var found = filmList.list.find(function(element) {
-            return element.name === filmName;
-        });*/
         res.json(filmList.list[filmId-1]);
     }
 
